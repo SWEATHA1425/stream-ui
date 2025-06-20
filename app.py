@@ -1,12 +1,12 @@
 import streamlit as st
 import numpy as np
-import pickle
+from tensorflow.keras.models import load_model
 import time
 import tempfile
 from utils import extract_features
 
 # Load model
-model = pickle.load(open("model.pkl", "rb"))
+model = load_model("model.h5")
 
 # Class labels (order must match your training)
 class_names = ["Happy_Scream", "Normal_Conversation", "Screaming"]
